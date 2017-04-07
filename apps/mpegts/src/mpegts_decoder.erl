@@ -503,7 +503,7 @@ h264_frames(#stream{dts = DTS, pts = PTS, es_buffer = AnnexB, sent_config = Sent
   NalTypes = [h264:type(NAL) || NAL <- NALs],
 
   {ConfigNals, PayloadNals} = separate_nals(NALs),
-  {Config, Private2} = case ConfigNals of
+  {Config, _Private2} = case ConfigNals of
     [] -> {[], Private0};
     _ -> case h264:video_config(ConfigNals) of
       #video_frame{} = C ->

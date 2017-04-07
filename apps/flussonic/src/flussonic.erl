@@ -128,6 +128,7 @@ start0(_Options) ->
 
 
   application:start(crypto),
+  application:start(asn1),
   application:start(public_key),
   application:start(ssl),
   start_app(lhttpc),
@@ -137,6 +138,7 @@ start0(_Options) ->
   error_logger:delete_report_handler(sasl_report_tty_h),
   start_app(ranch),
   start_app(mimetypes),
+  start_app(cowlib),
   start_app(cowboy),
   start_app(rtmp),
   start_app(rtsp),
